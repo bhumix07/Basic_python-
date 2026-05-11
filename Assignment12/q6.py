@@ -17,13 +17,12 @@ Output:
 Automorphic Number
 
 '''
-n = int(input("Enter no: "))
-sq = n * n
+n = int(input("Enter the no1. : "))
 
-digits = len(str(n))
-last_part = sq % (10 ** digits)
+a = n**2
 
-if last_part == n:
+
+if n%10 and a%10 ==5:
     print("Automorphic number")
 else:
     print("Not Automorphic number")
