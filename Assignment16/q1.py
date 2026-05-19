@@ -1,134 +1,49 @@
-'''1. Utility Toolkit System
+'''1.Digit Product Analyzer System
 
-You are developing a Utility Toolkit Application for a small office. Employees use this tool to quickly perform common number operations like checking prime numbers, reversing numbers, etc.
+A data analytics company studies patterns in numeric transaction IDs to detect hidden behaviors.
 
-The system should be menu-driven and must continue running until the user selects Exit. All operations should be handled using match-case.
+For every entered number, the system analyzes relationships between its digits.
 
-Menu Options:
-1 → Check Prime Number
-2 → Check Palindrome Number
-3 → Reverse a Number
-4 → Count Digits
-5 → Exit 
+Write a program to:
 
-Sample Run 1:
+Find the product of every pair of adjacent digits
+Display all the products
+Find the sum of all these products
+Find the smallest product value
+If the sum of products is divisible by the total number of digits, print Stable Number
+Otherwise print Unstable Number
+
+Use loops wherever required.
+
 Input:
-Enter your choice: 1
-Enter number: 7
+57294
 
 Output:
-7 is a Prime Number
-
-Sample Run 2:
-Input:
-Enter your choice: 2
-Enter number: 121
-
-Output:
-121 is a Palindrome Number
-
-Sample Run 3:
-Input:
-Enter your choice: 3
-Enter number: 456
-
-Output:
-Reversed Number is: 654
-
-Sample Run 4:
-Input:
-Enter your choice: 4
-Enter number: 98765
-
-Output:
-Total digits: 5
-
-Sample Run 5 (Invalid Choice):
-Input:
-Enter your choice: 9
-
-Output:
-Invalid choice. Please try again.
-
-Sample Run 6 (Exit):
-Input:
-Enter your choice: 5
-
-Output:
-Exiting program... Thank you!
-
-Requirements:
-
-* Use while loop to repeat menu
-* Use match-case for decision making
-* Handle negative numbers properly
-* Use only loops and conditions
+Products: 35 14 18 36
+Sum = 103
+Smallest = 14
+Unstable Number
 '''
-print("Menu Options:") 
-print("1 → Check Prime Number")
-print("2 → Check Palindrome Number")
-print("3 → Reverse a Number")
-print("4 → Count Digits")
-print("5 → Exit")
+n = input("Enter number: ")
 
-while True:
-    print("Menu Options:") 
-    print("1 → Check Prime Number")
-    print("2 → Check Palindrome Number")
-    print("3 → Reverse a Number")
-    print("4 → Count Digits")
-    print("5 → Exit")
+sum_prod = 0
+smallest = 9999
 
-    n = int(input("Enter the choice... "))
-    match n:
-        case 1:
-            n=int(input("enter the no."))
-            x = 0
-            for i in range(2,n//2+1):
-                if n%i == 0:
-                    x = 1
-            if x == 0:
-                print("prime no.")
-            else:
-                print("not prime")  
-        case 2:
-            n = input("enter the no.")
-            rev = ""
-            
-            for i in str(n):
-                rev = i+rev
-            if rev == n:
-                print("palindrom")
-            else:
-                print("not palindrome")
-        case 3:
-             n = input("enter the no.")
-             rev = ""
-            
-             for i in str(n):
-                rev = i+rev
-             print(rev)  
-             
-        case 4:
-            n = int(input("enter the no."))
-            sum = 0
-            
-            for i in str(n):
-                sum +=1
-            print(sum)
-        
-        case 5:
-            print("exit")
-            break
+print("Products:", end=" ")
 
+for i in range(len(n)-1):
+    p = int(n[i]) * int(n[i+1])
+    
+    print(p, end=" ")   # direct print
+    sum_prod += p
+    
+    if p < smallest:
+        smallest = p
 
+print("\nSum =", sum_prod)
+print("Smallest =", smallest)
 
-
-
-
-
-
-
-
-
-
+if sum_prod % len(n) == 0:
+    print("Stable Number")
+else:
+    print("Unstable Number")

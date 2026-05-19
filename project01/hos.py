@@ -5,19 +5,23 @@ age = int(input("Enter your age: "))
 gender = input("Enter your gender male/female : ").lower()
 Emergency  = input("Emergency.??? yes or no : ").lower()
 # Registration 
-if Emergency  == "yes":
-    print("ICU immediately.")
-else:
-    if age <= 18:
-        f = "ground floor"
-        print("Go To Ground Floor.")
-    elif gender == "female" or gender == "f":
-        print("Go To Floor 1.")
-        f = "floor 1"
+while True:
+    
+    if Emergency  == "yes":
+        print("ICU immediately.")
+        print("THANK YOU FOR REGISTERING WITH US..")
+        break
     else:
-        print("Go To Floor 2.")
-        f = "floor 2"
-print("THANK YOU FOR REGISTERING WITH US..")
+        if age <= 18:
+            f = "ground floor"
+            print("Go To Ground Floor.")
+        elif gender == "female" or gender == "f":
+            print("Go To Floor 1.")
+            f = "floor 1"
+        else:
+            print("Go To Floor 2.")
+            f = "floor 2"
+
 dr1 = "Dr.sharma"
 dr2 = "Dr. Mehta"
 dr3 = "Dr. Singh"
@@ -27,7 +31,7 @@ n = input("Enter the problem : ").lower()
 
 # Doctor assignment and fee payment 
 while True:
-    if n == "fever" or n == "cough" or n == "cold" or n == "headache"or n == "body pain" or n == "stomachache" or n == "vomiting":
+    if n == "fever" or n == "cough" or n == "cold" or n == "headache"or n == "body pain" or n == "stomacha" or n == "vomiting":
         print("You are assigned to ", dr1)
         print("take medicine and follow the diet plan. now you have pay 500 rs for 1st time ")
         fee = int(input("pay the fee amount : "))
@@ -90,7 +94,7 @@ print("Doctor Assigned : ",urdr)
 print()
 print("Medicines    :  ", medical)
 print("doctor fee   :  ", fee)
-print("GST          :     3%")
+print("GST          :    3%")
 total = fee + (fee * 0.03)
 t = total+ med_fee
 print("Total Amount : ", t)

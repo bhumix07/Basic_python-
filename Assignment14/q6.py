@@ -1,22 +1,32 @@
-'''
-Bike Service Kilometer Checker
+'''6.
+Next Prime Cabin Number Generator
 
-A bike needs service every 3000 km.
+A luxury hotel gives only prime numbered cabins to VIP guests.
 
-Write a program to:
+Manager enters the last allotted cabin number.
+System must find the next available prime cabin number.
 
-- Read travelled kilometers
-- Print every service checkpoint till entered km
+Write a program using loops.
 
 Input:
-10000
+24
 
 Output:
-3000 6000 9000
+Next Prime Cabin = 29
 '''
-km = int(input("Enter the travelled kilometers: "))
-for i in range(0,km,3000):
-    if i==0:
-        continue
+
+
+n = int(input("enter the no."))
+n+=1
+while True :
+    flag = True 
+    for i in range(2,n//2+1):
+        if n%i==0:
+            flag = False
+            
     else:
-        print(i,end=" ")
+        if flag == True:
+           print("next prime cabin",n)
+           break
+        else:
+           n+=1

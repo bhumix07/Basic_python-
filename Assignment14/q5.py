@@ -1,23 +1,31 @@
-'''
-ATM Note Counter
+'''5.Number Stability Analyzer
 
-A bank ATM dispenses ₹100 notes.
+A science lab studies whether digits are in increasing order.
 
-Write a program to:
+Write a program using for-else loop:
 
-- Read withdrawal amount
-- Count how many ₹100 notes needed using loop
+- If every next digit is greater than previous print Stable Number
+- Else Unstable Number
 
 Input:
-700
+12359
 
 Output:
-Notes = 7
-'''
-amt = int(input("Enter amount:"))
-notes = 0
-for i in range(amt):
-    if i*100==amt:
-        notes = i
+Stable Number'''
+
+
+n = int(input("enter no."))
+x = 0
+
+for i in str(n):
+    
+    if x == 0:
+        x = int(i)
+        
+        continue
+    if int(i) <=x:
+        print("unstable")
         break
-print(notes)
+    x = int(i)
+else:
+    print("stable")
