@@ -9,11 +9,19 @@ Enter complaint: Delivery was delayed again today
 Output:
 Total words: 5
 '''
-count=1
-wrd = input("enter the msg  : ")
-for i in wrd:
+# count=1
+# wrd = input("enter the msg  : ")
+# for i in wrd:
     
-    if i==" ":
-        count+=1
+#     if i==" ":
+#         count+=1
         
-print(count)
+# print(count)
+
+
+
+
+n = input("enter complaint : ")
+a = n.split()
+b = len(a)
+print(b) 
