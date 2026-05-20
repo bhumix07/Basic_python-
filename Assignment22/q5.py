@@ -17,8 +17,17 @@ Input: Enter password: Python@45
 Output: Secure Password'''
 
 p = input("enter pass ")
+count=0
+count1=0
+if p[0].isupper() and p[-1].isdigit()and ' ' not in p and 8 <= len(p) <= 15:
+    for c in p:
+        if c.isdigit():
+            count+=1
+        elif c in "@#$%&*":
+            count1+=1
+        else:
+            break
 
-if p[0].isupper() and p[-1].isdigit() and sum(c.isdigit() for c in p) >= 2 and any(c in '@#$%&*' for c in p) and ' ' not in p and 8 <= len(p) <= 15:
     print("Secure Password")
 else:
     print("Insecure Password")
