@@ -22,7 +22,7 @@ n = int(input("Enter the no1. : "))
 a = n**2
 
 
-if n%10 and a%10 ==5:
+if n%10 == a%10 :
     print("Automorphic number")
 else:
     print("Not Automorphic number")
